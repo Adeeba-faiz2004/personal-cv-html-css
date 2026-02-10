@@ -1,107 +1,105 @@
-/* ------------------------------
-   General Styles
-------------------------------- */
+/* General Reset & Body */
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(235, 241, 241);
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ebf1f1;
+    color: #333;
+}
+
+/* Header / Navbar */
 .header {
-    background-color: rgb(1, 20, 88) !important;
-    height: 60px;
-    border: 1px solid #ddd;
+    background-color: rgb(1, 20, 88);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(1, 20, 88) !important;
+    justify-content: center;
     flex-wrap: wrap;
-    padding: 0 10px;
+    gap: 20px;
+    padding: 10px 0;
 }
 
-a {
+.nav_link {
+    color: #fff;
     text-decoration: none;
-    color: antiquewhite;
-    padding: 8px;
-    background-color: rgb(1, 20, 88) !important;
+    font-weight: bold;
+    padding: 6px 12px;
+    transition: 0.3s;
 }
 
-a:hover {
-    text-decoration: underline;
+.nav_link:hover {
+    background-color: #23527c;
+    border-radius: 5px;
+}
+
+/* Section Titles */
+.section {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
 }
 
 .section_title {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
-    color: #333;
     margin-bottom: 15px;
     text-transform: uppercase;
-    line-height: 1.5;
+    color: #333;
 }
 
-/* ------------------------------
-   About Section
-------------------------------- */
+/* About Section */
 .about_content {
     display: flex;
-    gap: 20px;
     align-items: center;
+    gap: 20px;
     flex-wrap: wrap;
-}
-
-.about_text {
-    flex: 1;
+    justify-content: center;
+    text-align: center;
 }
 
 .profile_picture {
-    max-width: 150px;
-    width: 100%;
-    height: auto;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    border: 2px solid rgb(1, 20, 88);
-    box-shadow: 0 10px rgba(1, 20, 88, 0.5);
+    border: 3px solid rgb(1, 20, 88);
+    box-shadow: 0 5px 10px rgba(1, 20, 88, 0.5);
 }
 
-/* ------------------------------
-   Education Section
-------------------------------- */
-table {
-    border-collapse: collapse;
+/* Education Table */
+.education_table {
     width: 100%;
-    margin-bottom: 20px;
-    font-size: 14px;
+    border-collapse: collapse;
+    margin-top: 10px;
 }
 
-th {
+.education_table th, .education_table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.education_table th {
     background-color: rgb(1, 20, 88);
     color: #fff;
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
 }
 
-td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-/* ------------------------------
-   Skills Section
-------------------------------- */
+/* Skills Section */
 .skills_list {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .skills_list li {
@@ -109,143 +107,86 @@ td {
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
-    font-size: 16px;
     font-weight: bold;
-    text-align: center;
+    transition: 0.3s;
 }
 
-/* ------------------------------
-   Contact Form
-------------------------------- */
-.contact_form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: rgb(1, 20, 88);
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 10px rgba(1, 20, 88, 0.5);
-}
-
-label {
-    grid-column: 1/2;
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    grid-column: 2/3;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-input[type="submit"] {
-    grid-column: 1 / -1;
-    background-color: rgb(1, 20, 88);
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    border: 1px solid #ddd;
-}
-
-input[type="submit"]:hover {
+.skills_list li:hover {
     background-color: #23527c;
 }
 
-/* ------------------------------
-   Footer
-------------------------------- */
-.footer p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Contact Form */
+.contact_form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
     background-color: rgb(1, 20, 88);
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(1,20,88,0.5);
     color: #fff;
-    height: 30px;
-    border: 1px solid #ddd;
-    font-size: 12px;
 }
 
-/* ------------------------------
-   Responsive Media Queries
-------------------------------- */
-@media (max-width: 1200px) {
-    .nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
+.contact_form label {
+    grid-column: 1 / 2;
+    font-weight: bold;
+    align-self: center;
+}
 
-    a {
-        margin: 5px 0;
+.contact_form input[type="text"],
+.contact_form input[type="email"],
+.contact_form textarea {
+    grid-column: 2 / 3;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+.contact_form input[type="submit"] {
+    grid-column: 1 / 3;
+    padding: 10px;
+    background-color: #23527c;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contact_form input[type="submit"]:hover {
+    background-color: #003366;
+}
+
+/* Footer */
+.footer {
+    background-color: rgb(1, 20, 88);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about_content {
+        flex-direction: column;
     }
 
     .contact_form {
         grid-template-columns: 1fr;
-        max-width: 90%;
     }
 
-    label,
-    input[type="text"],
-    input[type="email"],
-    textarea,
-    input[type="submit"] {
-        grid-column: 1/2;
-    }
-}
-
-@media (max-width: 768px) {
-    .about_content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 10px;
-    }
-
-    .profile_picture {
-        width: 120px;
-        height: 120px;
-    }
-
-    .section_title {
-        font-size: 18px;
+    .contact_form label,
+    .contact_form input[type="text"],
+    .contact_form input[type="email"],
+    .contact_form textarea,
+    .contact_form input[type="submit"] {
+        grid-column: 1 / 2;
     }
 
     .skills_list {
         flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
-
-    .skills_list li {
-        width: 80%;
-        font-size: 14px;
-    }
-
-    table, th, td {
-        font-size: 12px;
-        padding: 6px;
-    }
-}
-
-@media (max-width: 480px) {
-    .section_title {
-        font-size: 16px;
-    }
-
-    .skills_list li {
-        font-size: 12px;
-        padding: 8px 0;
-    }
-
-    body {
-        font-size: 14px;
+        gap: 10px;
     }
 }
