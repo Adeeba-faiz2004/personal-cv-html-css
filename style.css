@@ -26,7 +26,7 @@ body {
     align-items: center;
     background-color: rgb(1, 20, 88);
     padding: 10px 0;
-    flex-wrap: wrap; /* mobile pe wrap ho jaaye */
+    flex-wrap: nowrap;
 }
 
 .nav_link {
@@ -189,5 +189,13 @@ body {
     .skills_list {
         flex-direction: column;
         gap: 10px;
+    }
+    .nav {
+        flex-wrap: wrap; /* still single row if possible */
+    }
+
+    .nav_link {
+        font-size: 14px;
+        padding: 8px 0;
     }
 }
