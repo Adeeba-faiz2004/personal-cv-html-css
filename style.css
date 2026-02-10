@@ -51,14 +51,18 @@ a:hover {
     display: flex;
     gap: 20px;
     align-items: center;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.about_text {
+    flex: 1;
 }
 
 .profile_picture {
-    height: 120px;
-    width: 120px;
+    max-width: 150px;
+    width: 100%;
+    height: auto;
     border-radius: 50%;
-    margin: 20px auto;
     border: 2px solid rgb(1, 20, 88);
     box-shadow: 0 10px rgba(1, 20, 88, 0.5);
 }
@@ -107,12 +111,7 @@ td {
     border-radius: 5px;
     font-size: 16px;
     font-weight: bold;
-    transition: background-color 0.3s ease-in-out;
     text-align: center;
-}
-
-.skills_list li:hover {
-    background-color: rgb(1, 20, 88);
 }
 
 /* ------------------------------
@@ -146,6 +145,7 @@ textarea {
 }
 
 input[type="submit"] {
+    grid-column: 1 / -1;
     background-color: rgb(1, 20, 88);
     color: #fff;
     padding: 10px 20px;
@@ -153,7 +153,6 @@ input[type="submit"] {
     border-radius: 10px;
     cursor: pointer;
     border: 1px solid #ddd;
-    grid-column: 1 / -1;
 }
 
 input[type="submit"]:hover {
@@ -163,28 +162,20 @@ input[type="submit"]:hover {
 /* ------------------------------
    Footer
 ------------------------------- */
-.copyright {
-    background-color: rgb(1, 20, 88);
-    height: 30px;
-    color: #fff;
-    border: 1px solid #ddd;
-    padding: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-}
-
 .footer p {
     display: flex;
     justify-content: center;
+    align-items: center;
+    background-color: rgb(1, 20, 88);
+    color: #fff;
+    height: 30px;
+    border: 1px solid #ddd;
+    font-size: 12px;
 }
 
 /* ------------------------------
    Responsive Media Queries
 ------------------------------- */
-
-/* Tablet + Mobile */
 @media (max-width: 1200px) {
     .nav {
         flex-direction: column;
@@ -201,11 +192,7 @@ input[type="submit"]:hover {
         max-width: 90%;
     }
 
-    label {
-        grid-column: 1/2;
-        margin-bottom: 5px;
-    }
-
+    label,
     input[type="text"],
     input[type="email"],
     textarea,
@@ -214,19 +201,17 @@ input[type="submit"]:hover {
     }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
     .about_content {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 15px;
+        gap: 10px;
     }
 
     .profile_picture {
-        width: 100px;
-        height: 100px;
-        margin: 10px auto;
+        width: 120px;
+        height: 120px;
     }
 
     .section_title {
@@ -235,7 +220,7 @@ input[type="submit"]:hover {
 
     .skills_list {
         flex-direction: column;
-        gap: 10px;
+        width: 100%;
         align-items: center;
     }
 
@@ -250,7 +235,6 @@ input[type="submit"]:hover {
     }
 }
 
-/* Small Mobile */
 @media (max-width: 480px) {
     .section_title {
         font-size: 16px;
