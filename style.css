@@ -22,10 +22,11 @@ body {
 
 .nav {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-around; /* evenly spaced */
+    align-items: center;
+    background-color: rgb(1, 20, 88);
     padding: 10px 0;
+    flex-wrap: wrap; /* mobile pe wrap ho jaaye */
 }
 
 .nav_link {
